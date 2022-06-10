@@ -7,7 +7,7 @@ class Solution {
         while(i<n && j<n ){
             if(!bucket.contains(s.charAt(j))){
                 bucket.add(s.charAt(j++));
-                max = Math.max(max,j-i);
+                max = Math.max(max,bucket.size());
             }else{
                 bucket.remove(s.charAt(i++));
             }
