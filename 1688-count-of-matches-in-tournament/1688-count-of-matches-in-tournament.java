@@ -1,19 +1,6 @@
 class Solution {
     public int numberOfMatches(int n) {
-        int teams=0;
-        int matches=0;
-        int ans=0;
-        while(n!=1){
-        if(n%2!=0){
-            teams=(n-1)/2+1;
-            matches=(n-1)/2;
-        }else{
-            teams=n/2;
-            matches=n/2;
-        }
-           ans=ans+matches;
-           n=teams;
+        //*There's a tennis tournament with 127 players. You've got 126 people paired off in 63               matches, plus 1 unpaired player as a bye.In the next round, there are 64 players and 32 matches. How many matches, total, does it take to determine a winner?Answer: 126.Explanation: It takes one match to eliminate one player. 126 players have to be eliminated to leave one winner. Therefore, there have to be 126 matches.*//
+        return n-1;
     }
-        return ans;
-}
 }
