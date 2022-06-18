@@ -9,7 +9,7 @@ public:
                 if(digit==0 || i%digit!=0){
                     break;
                 }
-                temp = temp/10;
+                temp /= 10;
             }
             
             if(temp==0){
