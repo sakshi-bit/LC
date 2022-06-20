@@ -6,7 +6,7 @@ public:
         while(n>0){
            
             
-            sum=sum+n%k;
+            sum+=n%k;
             n = n/k;
         }
         return sum;
