@@ -2,6 +2,7 @@ class Solution {
 public:
     int countBalls(int lowLimit, int highLimit) {
         int cnt[46] = {};
+        int ans=0;
         for(int i=lowLimit;i<=highLimit;i++){
             int sum =0,temp=i;
             while(temp){
@@ -9,7 +10,8 @@ public:
                 temp=temp/10;
             }
             cnt[sum]++;
+            ans = max(ans,cnt[sum]);
         }
-        return *max_element(begin(cnt),end(cnt));
+        return ans;
     }
 };
