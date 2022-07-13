@@ -8,12 +8,13 @@ public:
             return mergedInterval;
         }
         
-        
+        //step 1
         sort(intervals.begin(),intervals.end());
-        
+        //step 2
         vector<int>tempInterval = intervals[0];
         
         for(auto it: intervals){
+            //1<=3 ===> 3 = max(3,3);;; 2<=3 ===> max(6,3) == 6 ====> (1,6)
             if(it[0]<=tempInterval[1]){
                 tempInterval[1] = max(it[1],tempInterval[1]);
             }
