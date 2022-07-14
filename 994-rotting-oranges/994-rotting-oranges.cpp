@@ -68,7 +68,7 @@ public:
             }
             
             if(freshOrangesCount==0){
-                return min_time;
+                return curr_time;
             }
         }
         
