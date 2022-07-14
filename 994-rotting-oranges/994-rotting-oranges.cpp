@@ -40,7 +40,7 @@ public:
         
         //step 3 dfs in queue
         
-        int min_time = 0;
+      
         
         while(rotten_queue.size()){
             
@@ -50,7 +50,7 @@ public:
             
             rotten_queue.pop();
             
-            min_time = max(min_time,curr_time);
+            
             
             freshOrangesCount--;
             
