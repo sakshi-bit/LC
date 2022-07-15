@@ -26,9 +26,10 @@ public:
         //step 4 final check ====> important check
         
         while(!st.empty() && st.top()>s[i] && last[st.top()]>i){
-            
+           
             present.erase(st.top());
-            st.pop();
+             st.pop();
+            
         }
         
         st.push(s[i]);
