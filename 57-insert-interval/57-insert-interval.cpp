@@ -22,14 +22,14 @@ public:
         if(ans.size()==0 || newInterval[0] > ans.back()[1]){
             ans.push_back(newInterval);
         }else{
-            int lastInterval = ans.back()[1];
+            
             ans.back()[1] = max(ans.back()[1],newInterval[1]);
         }
         
         //step 3
         //check for remaining intervals
         while(idx<n){
-            int lastInterval = ans.back()[1];
+            
             if(ans.back()[1]>=intervals[idx][0]){
                 //merging
                 ans.back()[1] = max(ans.back()[1],intervals[idx][1]);
