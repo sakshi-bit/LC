@@ -18,7 +18,23 @@ public:
         }
         return len;
     }
+    ListNode* getMiddle(ListNode* head){
+        if(head == NULL || head->next==NULL){
+            return head;
+        }
+        ListNode* fast = head->next;
+        ListNode* slow = head;
+        while(fast!=NULL){
+            fast = fast->next;
+            if(fast!=NULL){
+                fast = fast->next;
+            }
+            slow=slow->next;
+        }
+        return slow;
+    }
     ListNode* middleNode(ListNode* head) {
+        /*
         int len = getLength(head);
         int ans = (len/2);
         int cnt = 0;
@@ -27,6 +43,7 @@ public:
             temp=temp->next;
             cnt++;
         }
-        return temp;
+        return temp;*/
+        return getMiddle(head);
     }
 };
