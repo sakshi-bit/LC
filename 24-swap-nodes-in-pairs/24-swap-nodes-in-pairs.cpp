@@ -18,7 +18,7 @@ public:
         ListNode* dummy = new ListNode(-1);
         ListNode* prev = dummy;
         ListNode* curr = head;
-        while(curr && curr->next){
+        while(curr!=NULL && curr->next!=NULL){
             prev->next = curr->next;
             curr->next = prev->next->next;
             prev->next->next = curr;
