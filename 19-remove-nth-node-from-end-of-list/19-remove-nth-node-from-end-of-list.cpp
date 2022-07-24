@@ -18,6 +18,7 @@ public:
             fast = fast->next;
         }
         
+        //if n == no. of nodes that is first node will be deleted
         if(!fast)
             return head->next;
         
@@ -26,6 +27,7 @@ public:
             slow=slow->next;
         }
         
+        //deletion        
         slow->next=slow->next->next;
         return head;
     }
