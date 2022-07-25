@@ -12,9 +12,7 @@ class Solution {
 public:
     ListNode* insertionSortList(ListNode* head) {
         ListNode* dummyNode = new ListNode(123);
-        if(head==NULL){
-            return head;
-        }
+      
         while(head){
             ListNode* forward = head->next;
             ListNode* temp = dummyNode;
