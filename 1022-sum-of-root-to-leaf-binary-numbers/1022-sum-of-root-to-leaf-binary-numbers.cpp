@@ -22,9 +22,9 @@ public:
         if(!root->left && !root->right)
             return ans;
         
-            return sumOfBinaryNumbers(root->left,ans)+sumOfBinaryNumbers(root->right,ans);
+        return sumOfBinaryNumbers(root->left,ans)+sumOfBinaryNumbers(root->right,ans);
         
-        return 0;
+       
     }
     int sumRootToLeaf(TreeNode* root) {
         return sumOfBinaryNumbers(root,0);
