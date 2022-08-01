@@ -15,9 +15,7 @@ public:
         if(ps>pe || is>ie){
             return NULL;
         }
-        
-        int rootval = preorder[ps];
-        TreeNode* root = new TreeNode(rootval);
+        TreeNode* root = new TreeNode(preorder[ps]);
         int rootidx = mpp[root->val];
         int left = rootidx-is;
         //reccursive calls
