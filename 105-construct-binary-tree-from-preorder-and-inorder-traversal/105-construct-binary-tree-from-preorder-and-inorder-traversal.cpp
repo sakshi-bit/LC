@@ -11,28 +11,27 @@
  */
 class Solution {
 public:
-    TreeNode* solve(vector<int>& preorder, vector<int>& inorder,int &idx,int left,int right){
-        if(left>right)
+    TreeNode* solve(vector<int>& preorder, vector<int>& inorder,int ps,int pe,int is,int ie,unordered_map<int,int>&mpp){
+        if(ps>pe || is>ie){
             return NULL;
+        }
         
-        
-        int pivot = left;
-        while(inorder[pivot]!=preorder[idx])
-            pivot++;
-        
-        
-        idx++;
-        
-        TreeNode* newnode = new TreeNode(inorder[pivot]);
-        newnode->left = solve(preorder,inorder,idx,left,pivot-1);
-        newnode->right = solve(preorder,inorder,idx,pivot+1,right);
-        return newnode;
-        
+        int rootval = preorder[ps];
+        TreeNode* root = new TreeNode(rootval);
+        int rootidx = mpp[root->val];
+        int left = rootidx-is;
+        //reccursive calls
+        root->left = solve(preorder,inorder,ps+1,ps+left,is,rootidx-1,mpp);
+        root->right = solve(preorder,inorder,ps+left+1,pe,rootidx+1,ie,mpp);
+        return root;
     }
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-        int n = inorder.size();
-        int idx = 0;
-        return solve(preorder,inorder,idx,0,n-1);
-        
+        int n = preorder.size();
+        int m = inorder.size();
+        unordered_map<int,int>mpp;
+        for(int i=0;i<m;i++){
+            mpp[inorder[i]]=i;
+        }
+        return solve(preorder,inorder,0,n-1,0,m-1,mpp);
     }
 };
