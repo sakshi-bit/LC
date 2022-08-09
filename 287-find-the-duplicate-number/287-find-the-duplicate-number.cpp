@@ -10,9 +10,8 @@ public:
         }while(slow!=fast);
         
         slow = nums[0];
-        
         while(slow!=fast){
-            slow= nums[slow];
+            slow = nums[slow];
             fast = nums[fast];
         }
         
